@@ -3,10 +3,11 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import '@/assets/sass/reset.sass'
-import '@/assets/font/index.css'
-import {Avatar} from 'element-ui'
+import '@/assets/font/iconfont.css'
+import {Avatar,Icon} from 'element-ui'
 
 Vue.use(Avatar)
+Vue.use(Icon)
 Vue.config.productionTip = false
 
 new Vue({

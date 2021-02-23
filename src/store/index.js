@@ -10,6 +10,9 @@ export default new Vuex.Store({
 	getters: {
 		loginStatus(state) {
 			return state.loginStatus || JSON.parse(window.localStorage.getItem('loginStatus'));
+		},
+		userInfo(state){
+			return state.userInfo || JSON.parse(window.localStorage.getItem('userInfo'));
 		}
 	},
 	mutations: {

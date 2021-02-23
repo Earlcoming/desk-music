@@ -5,14 +5,36 @@
         </div>
         <div class="line"></div>
 
-        <div class="search-status" v-if="loginStatus"></div>
+        <div class="search-status" v-if="loginStatus">
+            <el-avatar :src="userInfo.avatarUrl"></el-avatar>
+            <el-dropdown @click="handleClick">
+                <span class="el-dropdown-link">
+                    {{ userInfo.nickname }}
+                    <i class="el-icon-arrow-down el-icon--right"></i>
+                </span>
+                <el-dropdown-menu slot="dropdown">
+                    <el-dropdown-item icon="el-icon-user"
+                        >个人主页</el-dropdown-item
+                    >
+                    <el-dropdown-item icon="el-icon-medal"
+                        >我的等级</el-dropdown-item
+                    >
+                    <el-dropdown-item icon="el-icon-setting"
+                        >个人设置</el-dropdown-item
+                    >
+                    <el-dropdown-item icon="el-icon-switch-button"
+                        >退出登录</el-dropdown-item
+                    >
+                </el-dropdown-menu>
+            </el-dropdown>
+        </div>
         <div class="login pointer" @click="login" v-else>登录</div>
         <div class="search-list" :class="[open, close]">
             <div class="search-empty" @click="closeSearch"></div>
             <div class="search-body">
-				<div class="search-close pointer" @click="closeSearch">
-					<i class="iconfont iconclose"></i>
-				</div>
+                <div class="search-close pointer" @click="closeSearch">
+                    <i class="iconfont iconclose"></i>
+                </div>
                 <div class="saerch-form">
                     <div class="saerch-form-bg"></div>
                     <input
@@ -44,6 +66,7 @@
 
 <script>
 import { mapGetters } from "vuex";
+import axios from "axios";
 export default {
     name: "",
     data() {
@@ -51,30 +74,37 @@ export default {
             searchKeywords: "",
             open: "",
             close: "",
+            userList: [],
         };
     },
     components: {},
     computed: {
-        ...mapGetters(["loginStatus"]),
+        ...mapGetters(["loginStatus", 'userInfo']),
     },
     methods: {
-        // 开关搜索列表
+        /* 开搜索列表 */
         showSearch() {
-            this.open = 'open';
-			this.close = '';
+            this.open = "open";
+            this.close = "";
         },
-		closeSearch() {
-			this.open = '';
-			this.close = 'close'
-		},
-        // 搜索
+        /* 关搜索列表 */
+        closeSearch() {
+            this.open = "";
+            this.close = "close";
+        },
+        /* 搜索 */
         search() {
             console.log(this.searchKeywords);
         },
-        // 登录,跳转到登录页面
+        /* 登录,跳转到登录页面 */
         login() {
             this.$router.push({ name: "login" });
         },
+        // 用户信息点击
+        handleClick() {},
+    },
+    created() {
+        
     },
 };
 </script>
@@ -93,7 +123,17 @@ export default {
 		margin: 0 15px
 		background-color: #ccc
 	.search-status
-		display: block
+		display: flex
+		align-items: center
+		img
+			max-width: 35px
+			border-radius: 50%
+		.user-name
+			margin: 0 5px
+		.user-icon
+			i
+				font-size: 14px
+				cursor: pointer
 	.search-list
 		position: fixed
 		left: 0
