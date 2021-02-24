@@ -36,7 +36,7 @@ export default {
 };
 </script>
 <style lang="sass" scoped>
-		.login-bg
+	.login-bg
 		background-color: #f5f5f5
 		display: flex
 		align-items: center
