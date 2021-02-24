@@ -15,5 +15,4 @@ export default {
 		if(!name) return;
 		storage.removeItem(name);
 	}
-	
 }
