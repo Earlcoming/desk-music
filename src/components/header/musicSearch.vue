@@ -13,18 +13,10 @@
                     <i class="el-icon-arrow-down el-icon--right"></i>
                 </span>
                 <el-dropdown-menu slot="dropdown">
-                    <el-dropdown-item icon="el-icon-user"
-                        >个人主页</el-dropdown-item
-                    >
-                    <el-dropdown-item icon="el-icon-medal"
-                        >我的等级</el-dropdown-item
-                    >
-                    <el-dropdown-item icon="el-icon-setting"
-                        >个人设置</el-dropdown-item
-                    >
-                    <el-dropdown-item icon="el-icon-switch-button"
-                        >退出登录</el-dropdown-item
-                    >
+                    <el-dropdown-item icon="el-icon-user">个人主页</el-dropdown-item>
+                    <el-dropdown-item icon="el-icon-medal">我的等级</el-dropdown-item>
+                    <el-dropdown-item icon="el-icon-setting">个人设置</el-dropdown-item>
+                    <el-dropdown-item icon="el-icon-switch-button">退出登录</el-dropdown-item>
                 </el-dropdown-menu>
             </el-dropdown>
         </div>
