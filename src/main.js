@@ -4,10 +4,9 @@ import router from './router'
 import store from './store'
 import '@/assets/sass/reset.sass'
 import '@/assets/font/iconfont.css'
-import {Avatar,Icon} from 'element-ui'
+import ElementUI from 'element-ui';
 
-Vue.use(Avatar)
-Vue.use(Icon)
+Vue.use(ElementUI)
 Vue.config.productionTip = false
 
 new Vue({

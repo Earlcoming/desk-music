@@ -1,3 +1,8 @@
 <template>
-	<div>我是登录页面</div>
+	<div>
+		<form action="">
+			<el-input></el-input>
+		</form>
+		
+	</div>
 </template>
