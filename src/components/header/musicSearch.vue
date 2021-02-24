@@ -6,8 +6,8 @@
         <div class="line"></div>
 
         <div class="search-status" v-if="loginStatus">
-            <el-avatar :src="userInfo.avatarUrl"></el-avatar>
-            <el-dropdown @click="handleClick">
+            <el-avatar class="avatar" :src="userInfo.avatarUrl"></el-avatar>
+            <el-dropdown trigger="click" class="pointer">
                 <span class="el-dropdown-link">
                     {{ userInfo.nickname }}
                     <i class="el-icon-arrow-down el-icon--right"></i>
@@ -112,11 +112,14 @@ export default {
 		width: 1px
 		height: 25px
 		margin-top: 0
-		margin: 0 15px
+		margin-left: 10px
+		margin-right: 15px
 		background-color: #ccc
 	.search-status
 		display: flex
 		align-items: center
+		.avatar
+			margin-right: 15px
 		img
 			max-width: 35px
 			border-radius: 50%

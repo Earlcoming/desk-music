@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-export const instance = axios.create({
+const instance = axios.create({
 	baseURL: 'http://localhost:3000',
 	timeout: 1000 * 8
 });
@@ -14,8 +14,10 @@ instance.interceptors.request.use(config => {
 });
 
 // 添加响应拦截器
-instance.interceptors.respnse.use( config => {
+instance.interceptors.response.use(config => {
 	return config;
 }, error => {
 	console.log(error);
-})
+});
+
+export default instance
