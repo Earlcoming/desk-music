@@ -38,7 +38,6 @@ import musicSearch from '@/components/header/musicSearch'
 export default {
     data() {
         return {
-        
         }
     },
     components: {
